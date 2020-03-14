@@ -1,0 +1,3 @@
+rootProject.name='ClickItem'
+include ':app'
+include ':items'

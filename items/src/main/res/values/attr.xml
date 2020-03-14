@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClickBar">
+        <attr name="cb_icon_left" format="reference" />
+        <attr name="cb_icon_right" format="reference" />
+        <attr name="cb_text" format="string" />
+        <attr name="cb_text_color" format="color" />
+        <attr name="cb_subtext_color" format="color" />
+        <attr name="cb_text_color_disable_click" format="color" />
+        <attr name="cb_subtext" format="string" />
+        <attr name="cb_show_divider" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchBar">
+        <attr name="sb_img" format="reference" />
+        <attr name="sb_text" format="string" />
+        <attr name="sb_subtext" format="string" />
+        <attr name="sb_show_divider" format="boolean" />
+        <attr name="sb_check" format="boolean" />
+    </declare-styleable>
+</resources>
