@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="BaseItem">
+        <attr name="xy_icon" format="reference" />
+        <attr name="xy_title" format="string" />
+        <attr name="xy_title_color" format="color" />
+    </declare-styleable>
+
     <declare-styleable name="ClickBar">
         <attr name="cb_icon_left" format="reference" />
         <attr name="cb_icon_right" format="reference" />
