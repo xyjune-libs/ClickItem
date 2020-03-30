@@ -7,21 +7,115 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.xyjune.items.ClickBar
+    <com.xyjune.items.BaseItem
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="50dp"
         android:background="@android:color/white"
-        app:cb_icon_left="@mipmap/ic_launcher"
-        app:cb_subtext="subtext"
-        app:cb_text="Click item" />
+        app:xy_icon="@mipmap/ic_launcher"
+        app:xy_subtext="subtext"
+        app:xy_subtext_color="#2196F3"
+        app:xy_subtext_size="14sp"
+        app:xy_text="BaseItem"
+        app:xy_text_color="#ff3030"
+        app:xy_text_size="16sp" />
 
-    <com.xyjune.items.SwitchBar
+    <com.xyjune.items.ClickItem
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:xy_click_icon="@drawable/next"
+        app:xy_icon="@mipmap/ic_launcher"
+        app:xy_subtext="click me"
+        app:xy_text="ClickItem" />
+
+    <com.xyjune.items.SwitchItem
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="@android:color/white"
-        app:sb_img="@mipmap/ic_launcher"
-        app:sb_text="Switch item" />
+        app:xy_icon="@mipmap/ic_launcher"
+        app:xy_text="SwitchItem" />
+
+    <com.xyjune.items.RadioItem
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        app:xy_icon="@mipmap/ic_launcher"
+        app:xy_text="RadioItem" />
+
+
+    <com.xyjune.items.XyRadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.xyjune.items.RadioItem
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            app:xy_icon="@mipmap/ic_launcher"
+            app:xy_text="RadioItem_1" />
+
+        <com.xyjune.items.RadioItem
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            app:xy_icon="@mipmap/ic_launcher"
+            app:xy_text="RadioItem_2" />
+
+        <com.xyjune.items.RadioItem
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            app:xy_icon="@mipmap/ic_launcher"
+            app:xy_text="RadioItem_3" />
+
+    </com.xyjune.items.XyRadioGroup>
+
+    <com.xyjune.items.ItemGroup
+        android:id="@+id/item_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.xyjune.items.BaseItem
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            app:xy_icon="@mipmap/ic_launcher"
+            app:xy_subtext="subtext"
+            app:xy_subtext_color="#2196F3"
+            app:xy_subtext_size="14sp"
+            app:xy_text="BaseItem"
+            app:xy_text_color="#ff3030"
+            app:xy_text_size="16sp" />
+
+        <com.xyjune.items.BaseItem
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            app:xy_icon="@mipmap/ic_launcher"
+            app:xy_subtext="subtext"
+            app:xy_subtext_color="#2196F3"
+            app:xy_subtext_size="14sp"
+            app:xy_text="BaseItem"
+            app:xy_text_color="#ff3030"
+            app:xy_text_size="16sp" />
+
+        <com.xyjune.items.BaseItem
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            app:xy_icon="@mipmap/ic_launcher"
+            app:xy_subtext="subtext"
+            app:xy_subtext_color="#2196F3"
+            app:xy_subtext_size="14sp"
+            app:xy_text="BaseItem"
+            app:xy_text_color="#ff3030"
+            app:xy_text_size="16sp" />
+    </com.xyjune.items.ItemGroup>
+
 
 </LinearLayout>
