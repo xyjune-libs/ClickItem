@@ -3,4 +3,8 @@
     <color name="def_text">#333333</color>
     <color name="def_subtext">#888888</color>
     <color name="def_text_disable">#aaaaaa</color>
+
+    <color name="def_item_color">#FFFFFFFF</color>
+    <color name="def_click_color">#f2f2f2</color>
+    <color name="def_divider_color">#f2f2f2</color>
 </resources>
