@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 
 public final class ClickItem extends BaseItem {
 
@@ -19,6 +18,8 @@ public final class ClickItem extends BaseItem {
     private ImageView mClickIcon;
 
     private int clickIcon;
+    private int clickIconWidth;
+    private int clickIconHeight;
 
     public ClickItem(Context context) {
         super(context);
@@ -28,7 +29,11 @@ public final class ClickItem extends BaseItem {
     public ClickItem(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ClickItem);
-        clickIcon = typedArray.getResourceId(R.styleable.ClickItem_xy_click_icon, 0);
+        clickIcon = typedArray.getResourceId(R.styleable.ClickItem_xy_clickIcon, 0);
+        int defWidth = dip2px(this.getContext(), 15);
+        int defHeight = dip2px(this.getContext(), 15);
+        clickIconWidth = typedArray.getDimensionPixelSize(R.styleable.ClickItem_xy_clickIcon_width, defWidth);
+        clickIconHeight = typedArray.getDimensionPixelSize(R.styleable.ClickItem_xy_clickIcon_height, defHeight);
         typedArray.recycle();
         initClickItem();
     }
@@ -40,9 +45,7 @@ public final class ClickItem extends BaseItem {
         } else {
             mClickIcon.setVisibility(GONE);
         }
-        int width = dip2px(this.getContext(), 15);
-        int height = dip2px(this.getContext(), 15);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(clickIconWidth, clickIconHeight);
         params.setMarginEnd(dip2px(this.getContext(), 15));
         this.addView(mClickIcon, params);
         setClickable(true);

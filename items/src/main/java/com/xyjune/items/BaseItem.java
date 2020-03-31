@@ -40,14 +40,14 @@ public class BaseItem extends LinearLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.BaseItem);
         icon = typedArray.getResourceId(R.styleable.BaseItem_xy_icon, 0);
         textStr = typedArray.getString(R.styleable.BaseItem_xy_text);
-        textColor = typedArray.getColor(R.styleable.BaseItem_xy_text_color,
+        textColor = typedArray.getColor(R.styleable.BaseItem_xy_textColor,
                 ContextCompat.getColor(context, R.color.def_text));
-        textSize = typedArray.getDimension(R.styleable.BaseItem_xy_text_size, dip2px(context, 16));
+        textSize = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_textSize, dip2px(context, 16));
 
         subtextStr = typedArray.getString(R.styleable.BaseItem_xy_subtext);
-        subtextColor = typedArray.getColor(R.styleable.BaseItem_xy_subtext_color,
+        subtextColor = typedArray.getColor(R.styleable.BaseItem_xy_subtextColor,
                 ContextCompat.getColor(context, R.color.def_subtext));
-        subtextSize = typedArray.getDimension(R.styleable.BaseItem_xy_subtext_size, dip2px(context, 14));
+        subtextSize = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_subtextSize, dip2px(context, 14));
 
         typedArray.recycle();
         init();
@@ -58,8 +58,14 @@ public class BaseItem extends LinearLayout {
         setOrientation(HORIZONTAL);
         initIcon();
         initText();
-        initSubtext();
+        if (isInitSubtext()) {
+            initSubtext();
+        }
         setClickable(false);
+    }
+
+    protected boolean isInitSubtext() {
+        return true;
     }
 
     private void initIcon() {
@@ -79,9 +85,7 @@ public class BaseItem extends LinearLayout {
     private void initText() {
         mText = new TextView(this.getContext());
         mText.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
-        if (textStr != null) {
-            mText.setText(textStr);
-        }
+        mText.setText(textStr);
         mText.setTextColor(textColor);
         mText.setSingleLine();
         mText.setEllipsize(TextUtils.TruncateAt.END);

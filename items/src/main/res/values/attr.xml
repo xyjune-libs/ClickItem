@@ -3,15 +3,17 @@
     <declare-styleable name="BaseItem">
         <attr name="xy_icon" format="reference" />
         <attr name="xy_text" format="string" />
-        <attr name="xy_text_color" format="color" />
-        <attr name="xy_text_size" format="dimension" />
+        <attr name="xy_textColor" format="color" />
+        <attr name="xy_textSize" format="dimension" />
         <attr name="xy_subtext" format="string" />
-        <attr name="xy_subtext_size" format="dimension" />
-        <attr name="xy_subtext_color" format="color" />
+        <attr name="xy_subtextSize" format="dimension" />
+        <attr name="xy_subtextColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="ClickItem">
-        <attr name="xy_click_icon" format="reference" />
+        <attr name="xy_clickIcon" format="reference" />
+        <attr name="xy_clickIcon_width" format="dimension" />
+        <attr name="xy_clickIcon_height" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="SwitchItem">
@@ -21,5 +23,19 @@
     <declare-styleable name="ItemGroup">
         <attr name="xy_divider" format="reference" />
         <attr name="xy_divider_paddingLeft" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="EditItem">
+        <attr name="xy_edit_hint" format="string" />
+        <attr name="xy_edit_textSize" format="dimension" />
+        <attr name="xy_edit_text" format="string" />
+        <attr name="xy_edit_textColor" format="color" />
+        <attr name="xy_edit_width" format="dimension" />
+        <attr name="xy_edit_height" format="dimension" />
+        <attr name="xy_edit_gravity" format="enum">
+            <enum name="START" value="0" />
+            <enum name="CENTER" value="1" />
+            <enum name="END" value="2" />
+        </attr>
     </declare-styleable>
 </resources>
