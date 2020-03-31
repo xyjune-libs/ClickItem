@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        app:xy_divider="@drawable/divider"
+        app:xy_divider="@drawable/xy_def_divider"
         app:xy_divider_paddingLeft="50dp">
 
         <com.xyjune.items.BaseItem
@@ -34,15 +34,18 @@
             app:xy_text_size="16sp" />
 
         <com.xyjune.items.ClickItem
+            android:id="@+id/click_item"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/xy_def_item_press"
             app:xy_click_icon="@drawable/next"
             app:xy_icon="@mipmap/ic_launcher"
             app:xy_subtext="click me"
             app:xy_text="ClickItem" />
 
         <com.xyjune.items.SwitchItem
+            android:id="@+id/switch_item"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -61,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        app:xy_divider="@drawable/divider"
+        app:xy_divider="@drawable/xy_def_divider"
         app:xy_divider_paddingLeft="50dp">
 
         <com.xyjune.items.RadioItem

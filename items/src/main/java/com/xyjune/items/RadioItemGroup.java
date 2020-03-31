@@ -2,7 +2,6 @@ package com.xyjune.items;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
@@ -14,7 +13,6 @@ public class RadioItemGroup extends ItemGroup {
     private static final String TAG = "XyRadioGroup";
 
     private int mCheckedId = -1;
-
 
     private CompoundButton.OnCheckedChangeListener mChildOnCheckedChangeListener;
     private boolean mProtectFromCheckedChange = false;
@@ -53,21 +51,32 @@ public class RadioItemGroup extends ItemGroup {
     @Override
     public void addView(final View child, int index, ViewGroup.LayoutParams params) {
         if (child instanceof RadioItem) {
-            ((RadioItem) child).setOnTouchListener(new OnTouchListener() {
+            ((RadioItem) child).setOnClickListener(new OnClickListener() {
                 @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    if (event.getAction() == MotionEvent.ACTION_UP) {
-
-                        if (!((RadioItem) child).isChecked()) {
-                            ((RadioItem) child).setChecked(true);
-                            checkRadioItem((RadioItem) child);
-                            if (mOnCheckedChangeListener != null)
-                                mOnCheckedChangeListener.onCheckedChanged(RadioItemGroup.this, child.getId());
-                        }
+                public void onClick(View v) {
+                    if (!((RadioItem) child).isChecked()) {
+                        ((RadioItem) child).setChecked(true);
+                        checkRadioItem((RadioItem) child);
+                        if (mOnCheckedChangeListener != null)
+                            mOnCheckedChangeListener.onCheckedChanged(RadioItemGroup.this, child.getId());
                     }
-                    return true;
                 }
             });
+//            ((RadioItem) child).setOnTouchListener(new OnTouchListener() {
+//                @Override
+//                public boolean onTouch(View v, MotionEvent event) {
+//                    if (event.getAction() == MotionEvent.ACTION_UP) {
+//
+//                        if (!((RadioItem) child).isChecked()) {
+//                            ((RadioItem) child).setChecked(true);
+//                            checkRadioItem((RadioItem) child);
+//                            if (mOnCheckedChangeListener != null)
+//                                mOnCheckedChangeListener.onCheckedChanged(RadioItemGroup.this, child.getId());
+//                        }
+//                    }
+//                    return true;
+//                }
+//            });
         }
         super.addView(child, index, params);
     }

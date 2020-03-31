@@ -46,7 +46,6 @@ public final class ClickItem extends BaseItem {
         params.setMarginEnd(dip2px(this.getContext(), 15));
         this.addView(mClickIcon, params);
         setClickable(true);
-        setBackground(ContextCompat.getDrawable(getContext(), R.drawable.item_press));
     }
 
     public void setClickIcon(int icon) {
