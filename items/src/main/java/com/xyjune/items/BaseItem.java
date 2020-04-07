@@ -153,4 +153,8 @@ public class BaseItem extends LinearLayout {
     public String getText() {
         return mText.getText().toString();
     }
+
+    public String getSubtextStr() {
+        return mSubtext.getText().toString();
+    }
 }

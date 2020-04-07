@@ -39,7 +39,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/xy_def_item_press"
-            app:xy_clickIcon="@drawable/next"
             app:xy_clickIcon_height="14dp"
             app:xy_clickIcon_width="14dp"
             app:xy_icon="@mipmap/ic_launcher"
