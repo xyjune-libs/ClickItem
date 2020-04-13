@@ -10,7 +10,7 @@ import android.widget.Switch;
 
 import androidx.annotation.Nullable;
 
-public final class SwitchItem extends BaseItem {
+public final class SwitchItem extends SubtextItem {
 
     private Switch mSwitch;
 

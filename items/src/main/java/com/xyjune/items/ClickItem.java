@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-public final class ClickItem extends BaseItem {
+public final class ClickItem extends SubtextItem {
 
     private static final String TAG = "ClickItem";
 
@@ -42,14 +42,13 @@ public final class ClickItem extends BaseItem {
     private void initClickItem() {
         mClickIcon = new ImageView(getContext());
         setClickable(true);
-        Log.d(TAG, "initClickItem: " + clickIcon);
         if (clickIcon != -1) {
             mClickIcon.setImageResource(clickIcon);
         } else {
             mClickIcon.setVisibility(GONE);
         }
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(clickIconWidth, clickIconHeight);
-        params.setMarginEnd(dip2px(this.getContext(), 15));
+        params.setMarginEnd(mDefMargin);
         this.addView(mClickIcon, params);
     }
 

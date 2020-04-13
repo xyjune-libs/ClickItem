@@ -20,19 +20,17 @@ public class BaseItem extends LinearLayout {
 
     protected ImageView mIcon;
     protected TextView mText;
-    protected TextView mSubtext;
+
+    protected int mDefMargin; // 默认间距
 
     private int icon;
     private String textStr;
     private int textColor;
     private float textSize;
-    private String subtextStr;
-    private int subtextColor;
-    private float subtextSize;
+
 
     public BaseItem(Context context) {
-        super(context);
-        init();
+        this(context, null);
     }
 
     public BaseItem(Context context, @Nullable AttributeSet attrs) {
@@ -43,29 +41,19 @@ public class BaseItem extends LinearLayout {
         textColor = typedArray.getColor(R.styleable.BaseItem_xy_textColor,
                 ContextCompat.getColor(context, R.color.def_text));
         textSize = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_textSize, dip2px(context, 16));
-
-        subtextStr = typedArray.getString(R.styleable.BaseItem_xy_subtext);
-        subtextColor = typedArray.getColor(R.styleable.BaseItem_xy_subtextColor,
-                ContextCompat.getColor(context, R.color.def_subtext));
-        subtextSize = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_subtextSize, dip2px(context, 14));
-
         typedArray.recycle();
+
+        mDefMargin = dip2px(getContext(), 12);
+
         init();
     }
 
     private void init() {
         setGravity(Gravity.CENTER_VERTICAL);
         setOrientation(HORIZONTAL);
+        setClickable(false);
         initIcon();
         initText();
-        if (isInitSubtext()) {
-            initSubtext();
-        }
-        setClickable(false);
-    }
-
-    protected boolean isInitSubtext() {
-        return true;
     }
 
     private void initIcon() {
@@ -78,7 +66,7 @@ public class BaseItem extends LinearLayout {
         int width = dip2px(this.getContext(), 20);
         int height = dip2px(this.getContext(), 20);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
-        params.leftMargin = dip2px(this.getContext(), 15);
+        params.setMarginStart(mDefMargin);
         this.addView(mIcon, params);
     }
 
@@ -92,38 +80,14 @@ public class BaseItem extends LinearLayout {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         params.weight = 1;
-        params.setMarginStart(dip2px(getContext(), 15));
-        params.setMarginEnd(dip2px(getContext(), 15));
+        params.setMarginStart(mDefMargin);
+        params.setMarginEnd(mDefMargin);
         this.addView(mText, params);
-    }
-
-    private void initSubtext() {
-        mSubtext = new TextView(this.getContext());
-        mSubtext.setTextSize(TypedValue.COMPLEX_UNIT_PX, subtextSize);
-        if (subtextStr != null) {
-            mSubtext.setText(subtextStr);
-        } else {
-            mSubtext.setVisibility(GONE);
-        }
-        mSubtext.setTextColor(subtextColor);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMarginEnd(dip2px(getContext(), 15));
-        this.addView(mSubtext, params);
     }
 
     public void setText(CharSequence charSequence) {
         textStr = charSequence.toString();
         mText.setText(charSequence);
-    }
-
-    public void setSubtext(CharSequence charSequence) {
-        mSubtext.setText(charSequence);
-        if (charSequence.length() > 0) {
-            mSubtext.setVisibility(VISIBLE);
-        } else {
-            mSubtext.setVisibility(GONE);
-        }
     }
 
     public void setTextColor(int color) {
@@ -152,9 +116,5 @@ public class BaseItem extends LinearLayout {
 
     public String getText() {
         return mText.getText().toString();
-    }
-
-    public String getSubtextStr() {
-        return mSubtext.getText().toString();
     }
 }

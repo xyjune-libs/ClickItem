@@ -5,6 +5,9 @@
         <attr name="xy_text" format="string" />
         <attr name="xy_textColor" format="color" />
         <attr name="xy_textSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SubtextItem">
         <attr name="xy_subtext" format="string" />
         <attr name="xy_subtextSize" format="dimension" />
         <attr name="xy_subtextColor" format="color" />
@@ -37,5 +40,13 @@
             <enum name="CENTER" value="1" />
             <enum name="END" value="2" />
         </attr>
+        <attr name="xy_edit_maxLength" format="integer" />
+        <attr name="xy_edit_toolIcon_width" format="dimension" />
+        <attr name="xy_edit_toolIcon_height" format="dimension" />
+        <attr name="xy_edit_toolIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="PwdEditItem">
+        <attr name="xy_pwd_visible" format="boolean" />
     </declare-styleable>
 </resources>

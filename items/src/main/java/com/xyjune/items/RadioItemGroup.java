@@ -62,21 +62,6 @@ public class RadioItemGroup extends ItemGroup {
                     }
                 }
             });
-//            ((RadioItem) child).setOnTouchListener(new OnTouchListener() {
-//                @Override
-//                public boolean onTouch(View v, MotionEvent event) {
-//                    if (event.getAction() == MotionEvent.ACTION_UP) {
-//
-//                        if (!((RadioItem) child).isChecked()) {
-//                            ((RadioItem) child).setChecked(true);
-//                            checkRadioItem((RadioItem) child);
-//                            if (mOnCheckedChangeListener != null)
-//                                mOnCheckedChangeListener.onCheckedChanged(RadioItemGroup.this, child.getId());
-//                        }
-//                    }
-//                    return true;
-//                }
-//            });
         }
         super.addView(child, index, params);
     }

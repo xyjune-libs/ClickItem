@@ -10,7 +10,7 @@ import android.widget.RadioButton;
 
 import androidx.annotation.Nullable;
 
-public final class RadioItem extends BaseItem {
+public final class RadioItem extends SubtextItem {
 
     private RadioButton mRadioButton;
 
