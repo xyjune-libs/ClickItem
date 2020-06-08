@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 app:xy_divider="@drawable/xy_def_divider"
-                app:xy_divider_paddingLeft="44dp">
+                app:xy_divider_paddingLeft="50dp">
 
                 <com.xyjune.items.BaseItem
                     android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 app:xy_divider="@drawable/xy_def_divider"
-                app:xy_divider_paddingLeft="44dp">
+                app:xy_divider_paddingLeft="50dp">
 
                 <com.xyjune.items.RadioItem
                     android:layout_width="match_parent"
@@ -117,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 app:xy_divider="@drawable/xy_def_divider"
-                app:xy_divider_paddingLeft="44dp">
+                app:xy_divider_paddingLeft="50dp">
 
                 <com.xyjune.items.EditItem
                     android:layout_width="match_parent"

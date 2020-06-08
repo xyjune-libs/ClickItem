@@ -27,6 +27,10 @@ public class BaseItem extends LinearLayout {
     private String textStr;
     private int textColor;
     private float textSize;
+    private int iconWidth;
+    private int iconHeight;
+    private int paddingStart;
+    private int paddingEnd;
 
 
     public BaseItem(Context context) {
@@ -41,9 +45,12 @@ public class BaseItem extends LinearLayout {
         textColor = typedArray.getColor(R.styleable.BaseItem_xy_textColor,
                 ContextCompat.getColor(context, R.color.def_text));
         textSize = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_textSize, dip2px(context, 16));
+        iconWidth = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_icon_width, dip2px(context, 20));
+        iconHeight = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_icon_height, dip2px(context, 20));
+        paddingStart = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingStart, dip2px(context, 20));
+        paddingEnd = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingEnd, dip2px(context, 20));
+        mDefMargin = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_margin, dip2px(context, 10));
         typedArray.recycle();
-
-        mDefMargin = dip2px(getContext(), 12);
 
         init();
     }
@@ -51,6 +58,7 @@ public class BaseItem extends LinearLayout {
     private void init() {
         setGravity(Gravity.CENTER_VERTICAL);
         setOrientation(HORIZONTAL);
+        setPadding(paddingStart, 0, paddingEnd, 0);
         setClickable(false);
         initIcon();
         initText();
@@ -63,10 +71,7 @@ public class BaseItem extends LinearLayout {
         } else {
             mIcon.setVisibility(GONE);
         }
-        int width = dip2px(this.getContext(), 20);
-        int height = dip2px(this.getContext(), 20);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
-        params.setMarginStart(mDefMargin);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(iconWidth, iconHeight);
         this.addView(mIcon, params);
     }
 
@@ -81,7 +86,6 @@ public class BaseItem extends LinearLayout {
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         params.weight = 1;
         params.setMarginStart(mDefMargin);
-        params.setMarginEnd(mDefMargin);
         this.addView(mText, params);
     }
 

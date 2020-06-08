@@ -28,7 +28,7 @@ public final class RadioItem extends SubtextItem {
         mRadioButton = new RadioButton(getContext());
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMarginEnd(dip2px(getContext(), 15));
+        params.setMarginStart(mDefMargin);
         this.addView(mRadioButton, params);
         mRadioButton.setClickable(false);
         setClickable(true);

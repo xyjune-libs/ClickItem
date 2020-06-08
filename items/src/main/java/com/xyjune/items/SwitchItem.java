@@ -34,7 +34,7 @@ public final class SwitchItem extends SubtextItem {
         mSwitch.setChecked(isChecked);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMarginEnd(dip2px(getContext(), 15));
+        params.setMarginStart(mDefMargin);
         this.addView(mSwitch, params);
     }
 

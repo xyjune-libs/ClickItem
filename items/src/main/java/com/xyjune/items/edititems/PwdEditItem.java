@@ -52,7 +52,7 @@ public class PwdEditItem extends EditItem {
         checkBox.setDrawableBounds(left, 0, right, drawableH);
         checkBox.setButtonDrawable(R.drawable.pwd_visible_box);
         LayoutParams params = new LayoutParams(width, height);
-        params.setMarginEnd(mDefMargin);
+        params.setMarginStart(mDefMargin);
         setVisible(visible);
         addView(checkBox, params);
     }

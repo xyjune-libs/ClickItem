@@ -44,7 +44,7 @@ public class SubtextItem extends BaseItem {
         mSubtext.setTextColor(subtextColor);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMarginEnd(mDefMargin);
+        params.setMarginStart(mDefMargin);
         this.addView(mSubtext, params);
     }
 

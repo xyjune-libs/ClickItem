@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setTitle("ClickItem v" + BuildConfig.VERSION_NAME);
+
         mClickItem = findViewById(R.id.click_item);
         mSwitchItem = findViewById(R.id.switch_item);
         mRadioItemGroup = findViewById(R.id.radio_group);

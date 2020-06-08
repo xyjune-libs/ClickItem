@@ -48,7 +48,7 @@ public final class ClickItem extends SubtextItem {
             mClickIcon.setVisibility(GONE);
         }
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(clickIconWidth, clickIconHeight);
-        params.setMarginEnd(mDefMargin);
+        params.setMarginStart(mDefMargin);
         this.addView(mClickIcon, params);
     }
 

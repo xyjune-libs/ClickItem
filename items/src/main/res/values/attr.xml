@@ -2,9 +2,14 @@
 <resources>
     <declare-styleable name="BaseItem">
         <attr name="xy_icon" format="reference" />
+        <attr name="xy_icon_width" format="reference" />
+        <attr name="xy_icon_height" format="reference" />
         <attr name="xy_text" format="string" />
         <attr name="xy_textColor" format="color" />
         <attr name="xy_textSize" format="dimension" />
+        <attr name="xy_paddingStart" format="dimension" />
+        <attr name="xy_paddingEnd" format="dimension" />
+        <attr name="xy_margin" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="SubtextItem">

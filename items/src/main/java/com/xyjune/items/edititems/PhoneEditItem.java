@@ -55,7 +55,7 @@ public class PhoneEditItem extends EditItem {
         int padding = dip2px(getContext(), 5);
         mImageView.setPadding(padding, padding, padding, padding);
         LayoutParams layoutParams = new LayoutParams(width, height);
-        layoutParams.setMarginEnd(mDefMargin);
+        layoutParams.setMarginStart(mDefMargin);
         addView(mImageView, layoutParams);
         mImageView.setOnClickListener(new OnClickListener() {
             @Override

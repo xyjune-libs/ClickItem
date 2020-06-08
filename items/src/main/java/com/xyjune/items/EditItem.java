@@ -67,7 +67,7 @@ public class EditItem extends BaseItem {
         if (editWidth == -3) {
             params.weight = 1;
         }
-        params.setMarginEnd(mDefMargin);
+        params.setMarginStart(mDefMargin);
         mEditText.setSingleLine();
         mEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
         mEditText.setPadding(0, 0, 0, 0);
