@@ -47,8 +47,8 @@ public class BaseItem extends LinearLayout {
         textSize = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_textSize, dip2px(context, 16));
         iconWidth = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_icon_width, dip2px(context, 20));
         iconHeight = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_icon_height, dip2px(context, 20));
-        paddingStart = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingStart, dip2px(context, 20));
-        paddingEnd = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingEnd, dip2px(context, 20));
+        paddingStart = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingStart, 15);
+        paddingEnd = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingEnd, 15);
         mDefMargin = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_margin, dip2px(context, 10));
         typedArray.recycle();
 
