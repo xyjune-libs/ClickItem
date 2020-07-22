@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -175,11 +176,16 @@ public class ItemGroup extends LinearLayout {
 
     private void drawHorizontalDivider(Canvas canvas, int top) {
         if (mDividerPaddingLeft == -1) {
-            View view = getChildAt(0);
-            if (view instanceof BaseItem) {
-                mDividerPaddingLeft = ((BaseItem) view).getChildAt(1).getLeft();
-            } else {
-                mDividerPaddingLeft = 0;
+            for (int i = 0; i < getChildCount(); i++) {
+                if (getChildAt(i).getVisibility() != GONE) {
+                    View view = getChildAt(i);
+                    if (view instanceof BaseItem) {
+                        mDividerPaddingLeft = ((BaseItem) view).getChildAt(1).getLeft();
+                    } else {
+                        mDividerPaddingLeft = 0;
+                    }
+                    break;
+                }
             }
         }
         mDivider.setBounds(getPaddingLeft() + mDividerPaddingLeft, top, getWidth() - getPaddingRight() - mDividerPaddingRight, top + mDividerHeight);

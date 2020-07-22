@@ -66,6 +66,7 @@
                     app:xy_icon="@mipmap/ic_launcher"
                     app:xy_text="BaseItem"
                     app:xy_textColor="#ff3030"
+                    android:visibility="gone"
                     app:xy_textSize="16sp" />
 
                 <com.xyjune.items.SubtextItem
