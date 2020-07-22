@@ -1,6 +1,7 @@
 package com.xyjune.clickitem;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
@@ -11,12 +12,16 @@ import com.xyjune.items.ClickItem;
 import com.xyjune.items.RadioItem;
 import com.xyjune.items.RadioItemGroup;
 import com.xyjune.items.SwitchItem;
+import com.xyjune.items.edititems.MsgCodeEditItem;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     ClickItem mClickItem;
     SwitchItem mSwitchItem;
     RadioItemGroup mRadioItemGroup;
+    MsgCodeEditItem mMsgCodeEditItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mClickItem = findViewById(R.id.click_item);
         mSwitchItem = findViewById(R.id.switch_item);
         mRadioItemGroup = findViewById(R.id.radio_group);
+        mMsgCodeEditItem = findViewById(R.id.msgEdit);
 
         mClickItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +55,21 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioItemGroup radioGroup, int checkedId) {
                 RadioItem item = findViewById(checkedId);
                 Toast.makeText(MainActivity.this, item.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mMsgCodeEditItem.checkTimer();
+        Log.d(TAG, "onCreate: " + mMsgCodeEditItem.getChildAt(1).getLeft());
+        mMsgCodeEditItem.setTimerListener(new MsgCodeEditItem.TimerListener() {
+            @Override
+            public void onTimerClick() {
+                Toast.makeText(MainActivity.this, "onTimerClick", Toast.LENGTH_SHORT).show();
+                mMsgCodeEditItem.startTimer(5000);
+            }
+
+            @Override
+            public void onTimeEnd() {
+                Toast.makeText(MainActivity.this, "onTimeEnd", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -47,8 +47,8 @@ public class BaseItem extends LinearLayout {
         textSize = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_textSize, dip2px(context, 16));
         iconWidth = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_icon_width, dip2px(context, 20));
         iconHeight = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_icon_height, dip2px(context, 20));
-        paddingStart = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingStart, 15);
-        paddingEnd = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingEnd, 15);
+        paddingStart = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingStart, dip2px(context, 10));
+        paddingEnd = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_paddingEnd, dip2px(context, 14));
         mDefMargin = typedArray.getDimensionPixelSize(R.styleable.BaseItem_xy_margin, dip2px(context, 10));
         typedArray.recycle();
 
@@ -72,6 +72,7 @@ public class BaseItem extends LinearLayout {
             mIcon.setVisibility(GONE);
         }
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(iconWidth, iconHeight);
+        params.setMarginEnd(mDefMargin);
         this.addView(mIcon, params);
     }
 
@@ -85,7 +86,6 @@ public class BaseItem extends LinearLayout {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         params.weight = 1;
-        params.setMarginStart(mDefMargin);
         this.addView(mText, params);
     }
 

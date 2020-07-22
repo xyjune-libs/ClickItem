@@ -54,4 +54,10 @@
     <declare-styleable name="PwdEditItem">
         <attr name="xy_pwd_visible" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="MsgCodeEditItem">
+        <attr name="xy_msg_click_text_color" format="color" />
+        <attr name="xy_msg_click_text_discolor" format="color" />
+        <attr name="xy_msg_click_text_size" format="dimension" />
+    </declare-styleable>
 </resources>

@@ -26,8 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-                app:xy_divider="@drawable/xy_def_divider"
-                app:xy_divider_paddingLeft="15dp">
+                app:xy_divider="@drawable/xy_def_divider">
 
                 <com.xyjune.items.BaseItem
                     android:layout_width="match_parent"
@@ -59,8 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-                app:xy_divider="@drawable/xy_def_divider"
-                app:xy_divider_paddingLeft="35dp">
+                app:xy_divider="@drawable/xy_def_divider">
 
                 <com.xyjune.items.BaseItem
                     android:layout_width="match_parent"
@@ -116,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 app:xy_divider="@drawable/xy_def_divider"
-                app:xy_divider_paddingLeft="35dp">
+                app:xy_divider_paddingLeft="40dp">
 
                 <com.xyjune.items.RadioItem
                     android:layout_width="match_parent"
@@ -149,7 +147,16 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 app:xy_divider="@drawable/xy_def_divider"
-                app:xy_divider_paddingLeft="35dp">
+                app:xy_divider_paddingLeft="40dp">
+
+                <com.xyjune.items.edititems.MsgCodeEditItem
+                    android:id="@+id/msgEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:xy_edit_hint="input msg code"
+                    app:xy_icon="@mipmap/ic_launcher"
+                    app:xy_msg_click_text_size="12sp"
+                    app:xy_text="验证码" />
 
                 <com.xyjune.items.EditItem
                     android:layout_width="match_parent"

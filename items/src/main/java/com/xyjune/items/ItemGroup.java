@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -32,7 +31,7 @@ public class ItemGroup extends LinearLayout {
         setOrientation(VERTICAL);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ItemGroup);
         Drawable drawable = typedArray.getDrawable(R.styleable.ItemGroup_xy_divider);
-        mDividerPaddingLeft = typedArray.getDimensionPixelSize(R.styleable.ItemGroup_xy_divider_paddingLeft, 0);
+        mDividerPaddingLeft = typedArray.getDimensionPixelSize(R.styleable.ItemGroup_xy_divider_paddingLeft, -1);
         setDividerDrawable(drawable);
     }
 
@@ -111,7 +110,6 @@ public class ItemGroup extends LinearLayout {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        Log.d(TAG, "onDraw: 绘制");
         if (mDivider != null) {
             if (getOrientation() == VERTICAL) {
                 //绘制垂直方向的divider
@@ -154,6 +152,7 @@ public class ItemGroup extends LinearLayout {
      * @param left
      */
     public void drawVerticalDivider(Canvas canvas, int left) {
+
         //设置divider的范围
         mDivider.setBounds(left, getPaddingTop() + mDividerPaddingLeft, left + mDividerWidth, getHeight() - getPaddingBottom() - mDividerPaddingRight);
         //绘制
@@ -175,6 +174,14 @@ public class ItemGroup extends LinearLayout {
     }
 
     private void drawHorizontalDivider(Canvas canvas, int top) {
+        if (mDividerPaddingLeft == -1) {
+            View view = getChildAt(0);
+            if (view instanceof BaseItem) {
+                mDividerPaddingLeft = ((BaseItem) view).getChildAt(1).getLeft();
+            } else {
+                mDividerPaddingLeft = 0;
+            }
+        }
         mDivider.setBounds(getPaddingLeft() + mDividerPaddingLeft, top, getWidth() - getPaddingRight() - mDividerPaddingRight, top + mDividerHeight);
         mDivider.draw(canvas);
     }
