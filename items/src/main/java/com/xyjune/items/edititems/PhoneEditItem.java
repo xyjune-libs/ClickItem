@@ -66,6 +66,16 @@ public class PhoneEditItem extends EditItem {
         showDel();
     }
 
+    @Override
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+        if (enabled) {
+            showDel();
+        } else {
+            mImageView.setVisibility(GONE);
+        }
+    }
+
     private void showDel() {
         if (TextUtils.isEmpty(mEditText.getText())) {
             mImageView.setVisibility(GONE);

@@ -7,7 +7,6 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
@@ -108,7 +107,13 @@ public class EditItem extends BaseItem {
         mEditText.clearFocus();
     }
 
-//    private SoftKeyboardStateHelper.SoftKeyboardStateListener mSoftKeyboardStateListener = new SoftKeyboardStateHelper.SoftKeyboardStateListener() {
+    @Override
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+        mEditText.setEnabled(enabled);
+    }
+
+    //    private SoftKeyboardStateHelper.SoftKeyboardStateListener mSoftKeyboardStateListener = new SoftKeyboardStateHelper.SoftKeyboardStateListener() {
 //        @Override
 //        public void onSoftKeyboardOpened(int keyboardHeightInPx) {
 //

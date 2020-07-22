@@ -13,6 +13,7 @@ import com.xyjune.items.RadioItem;
 import com.xyjune.items.RadioItemGroup;
 import com.xyjune.items.SwitchItem;
 import com.xyjune.items.edititems.MsgCodeEditItem;
+import com.xyjune.items.edititems.PhoneEditItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     SwitchItem mSwitchItem;
     RadioItemGroup mRadioItemGroup;
     MsgCodeEditItem mMsgCodeEditItem;
+    PhoneEditItem mPhoneEditItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         mSwitchItem = findViewById(R.id.switch_item);
         mRadioItemGroup = findViewById(R.id.radio_group);
         mMsgCodeEditItem = findViewById(R.id.msgEdit);
+        mPhoneEditItem = findViewById(R.id.phoneEdit);
+
+        mPhoneEditItem.setEditText("137****5030");
+        mPhoneEditItem.setEnabled(false);
 
         mClickItem.setOnClickListener(new View.OnClickListener() {
             @Override

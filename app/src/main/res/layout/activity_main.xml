@@ -176,6 +176,7 @@
                     app:xy_text="PwdEditItem" />
 
                 <com.xyjune.items.edititems.PhoneEditItem
+                    android:id="@+id/phoneEdit"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     app:xy_edit_hint="input phone"
